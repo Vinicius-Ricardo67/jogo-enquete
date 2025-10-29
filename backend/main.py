@@ -2,8 +2,18 @@ import json
 from fastapi import FastAPI, HTTPException
 import socketio
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Configuração inicial
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI()
 sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins="*")
@@ -17,7 +27,7 @@ USUARIOS_DB = "usuarios.json"
 def load_db(filename):
     """Carrega o banco de dados(JSON)"""
     if not os.path.exists(filename):
-        if "enquete" in filename:
+        if "enquete" in filename or "enquetes" in filename:
             with open(filename, "w") as f:
                 json.dump({"enquetes": []}, f)
         else:
@@ -58,7 +68,7 @@ def logout(usuario: dict):
     nome = usuario.get("nome")
     db = load_db(USUARIOS_DB)
 
-    if nome not in db["usuários"]:
+    if nome not in db["usuarios"]:
         raise HTTPException(status_code=404, detail="Usuário não encontrado.")
     
     db["usuarios"].remove(nome)
@@ -108,7 +118,7 @@ def obter_enquete(enquete_id: int):
         if e["id"] == enquete_id:
             total = sum(e["votos"].value())
             porcentagens = {
-                op: round((v / toral) * 100, 1) if total > 0 else 0
+                op: round((v / total) * 100, 1) if total > 0 else 0
                 for op, v in e["votos"].items()
             }
             e["porcentagens"] = porcentagens
