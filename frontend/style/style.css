@@ -1,9 +1,0 @@
-body {
-  height: 100vh;
-  background: url('/frontend/assets/') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}

@@ -9,31 +9,32 @@
 
 body {
   height: 100vh;
-  background: radial-gradient(circle at top left, #111, #000);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
 
-body::before {
-  content: '';
+#main-page {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top left, #111, #000);
-  backdrop-filter: blur(12px);
+  top:0; left:0;
+  width:100%; height:100%;
+  background: url('/frontend/assets/ChatGPT\ Image\ 29\ de\ out.\ de\ 2025\,\ 14_08_58.png') no-repeat center center;
+  background-size: cover;
+  filter: blur(12px) brightness(0.5);
   z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
-.card {
+.wrapper .card {
   position: relative;
-  z-index: 1; /* acima do blur */
-  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  background: rgb(44, 44, 44);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 50px;
@@ -41,8 +42,8 @@ body::before {
   width: 100%;
   max-width: 400px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-  animation: fade 0.8s ease;
   text-align: center;
+  animation: fade 0.8s ease;
 }
 
 @keyframes fade {
@@ -68,14 +69,9 @@ input {
   transition: 0.3s;
 }
 
-input::placeholder {
-  color: #aaa;
-}
+input::placeholder { color: #aaa; }
 
-input:focus {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 0 2px #6a5acd;
-}
+input:focus { background: rgba(255, 255, 255, 0.15); box-shadow: 0 0 0 2px #6a5acd; }
 
 button {
   width: 100%;
@@ -89,10 +85,7 @@ button {
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #6a5acd;
-}
+button:hover { transform: scale(1.05); box-shadow: 0 0 15px #6a5acd; }
 
 p {
   margin-top: 20px;
@@ -100,11 +93,5 @@ p {
   color: #bbb;
 }
 
-a {
-  color: #a66bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+a { color: #a66bff; text-decoration: none; }
+a:hover { text-decoration: underline; }
