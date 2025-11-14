@@ -17,18 +17,18 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; 
-    background-attachment: fixed;
-    min-height: 100vh; 
-    overflow: hidden;
+    background-attachment: fixed; 
+    min-height: 100vh;
 }
+
 
 button {
     display: block;
-    margin: 20rem auto 0 auto; 
-    font-size: 20px; 
+    margin: 45vh auto 0 auto;
+    font-size: 1.5rem;
     background-color: var(--jogar);
     color: #000;
-    padding: 10px 150px;
+    padding: 12px 120px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -40,4 +40,38 @@ button:hover {
     background-color: var(--subtitulo);
     color: #fff;
     transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+      
+        background-size: contain;
+        background-attachment: scroll;
+        background-color: #000; 
+    }
+
+    button {
+        margin-top: 35vh;
+        padding: 12px 90px;
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    body {
+        background-size: contain;    
+        background-position: top center;
+        background-attachment: scroll;
+        background-color: #000;     
+    }
+
+    button {
+        margin-top: 38vh;
+        padding: 12px 70px;
+        font-size: 1rem;
+    }
 }
