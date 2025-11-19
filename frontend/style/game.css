@@ -1,7 +1,8 @@
 :root {
     --fundo-dark: url(../assets/fundogame.png);
-    --enquete: #cacaca;
+    --enquete: #fff;
     --subtitulo:#00490c;
+     --jogar: #fff;
 }
 
 * {
@@ -17,60 +18,36 @@ body {
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed;
-    min-height: 100vh; 
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12rem;
+    margin: 40px; 
 }
 
 h1 {
-    font-size: 48px;
     font-weight: bold;
-    background: linear-gradient(90deg, #00490c, #18c05e, #49494d);
+    background: linear-gradient(90deg, #00490c, #118341, #525253);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; 
-    border-radius: 5px;
-    padding: 50 60;
     font-size: 50px;
-    margin: 3rem;
-    text-align: center;
+    margin: 5rem;
+    margin-bottom: 10px;
     color: #fff;
 }
 
-#game {
+button {
     display: block;
-    margin: 3rem auto 0 auto; 
-    font-size: 20px; 
-    background-color: var(--enquete);
+    margin: 2rem auto 0 auto;
+    font-size: 1.5rem;
+    background-color: var(--jogar);
     color: #00490c;
-    padding: 30px 130px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-#game2 {
-    display: block;
-    margin: 8rem auto 0 100px; 
-    font-size: 20px; 
-    background-color: var(--enquete);
-    color: #00490c;
-    padding: 30px 130px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-#game3 {
-    display: block;
-    margin: -5rem 100px 0 auto; 
-    font-size: 20px; 
-    background-color: var(--enquete);
-    color: #00490c;
-    padding: 30px 130px;
+    padding: 25px 140px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -81,6 +58,6 @@ h1 {
 
 button:hover {
     background-color: var(--subtitulo);
-    color: #ffffff;
+    color: #fff;
     transform: scale(1.05);
 }
