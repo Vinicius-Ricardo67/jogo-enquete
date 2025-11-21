@@ -19,15 +19,14 @@ body {
     background-size: cover; 
     background-attachment: fixed; 
     min-height: 100vh;
-}
-
+     }
 
 button {
     display: block;
     margin: 45vh auto 0 auto;
     font-size: 1.5rem;
     background-color: var(--jogar);
-    color: #00490c;
+    color: #00490c; 
     padding: 12px 120px;
     border-radius: 10px;
     border: none;
