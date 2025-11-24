@@ -118,4 +118,11 @@ function endGame() {
     document.getElementById("clock-emoji").style.display = "none";
 }
 
+const audio = new Audio("audio/musica.mp4");
+
+document.getElementById("playBtn").addEventListener("click", () => {
+    audio.play();
+});
+
+
 nextButton.onclick = nextQuestion;
