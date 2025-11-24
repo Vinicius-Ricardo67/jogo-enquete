@@ -2,20 +2,21 @@ const questionElement = document.getElementById("question");
 const optionButtons = document.querySelectorAll(".option");
 const nextButton = document.getElementById("next-btn");
 const feedback = document.getElementById("feedback");
-const timerElement = document.getElementById("timer");
+const timerElement = document.getElementById("timer"); 
 
 let questions = [];
 let currentQuestion = 0;
 let timer;
 let timeLeft = 15;
 let autoNextTimeout;
+let score = 0;
+let shuffledOptions = []; 
+let correctIndex = null;
 
-fetch("jogos.json")
+fetch("../backend/jogos.json")
     .then(response => response.json())
     .then(data => {
-
-        questions = shuffleArray(data.enquetes).slice(0, 10);
-
+        questions = shuffleArray(data.enquetes).slice(0, 10); 
         showQuestion();
     });
 
@@ -35,7 +36,6 @@ function startTimer() {
             clearInterval(timer);
             blockOptions();
             feedback.textContent = "⏳ Tempo esgotado!";
-
             autoNextTimeout = setTimeout(nextQuestion, 4000);
         }
     }, 1000);
@@ -59,10 +59,20 @@ function showQuestion() {
     clearTimeout(autoNextTimeout);
 
     const q = questions[currentQuestion];
+
     questionElement.textContent = q.question;
 
+    shuffledOptions = q.options.map((opt, index) => ({
+        text: opt,
+        isCorrect: index === q.correct
+    }));
+
+    shuffledOptions = shuffleArray(shuffledOptions);
+
+    correctIndex = shuffledOptions.findIndex(opt => opt.isCorrect);
+
     optionButtons.forEach((btn, index) => {
-        btn.textContent = q.options[index];
+        btn.textContent = shuffledOptions[index].text;
         btn.onclick = () => checkAnswer(index);
     });
 
@@ -72,19 +82,17 @@ function showQuestion() {
 function checkAnswer(selected) {
     clearInterval(timer);
 
-    const correct = questions[currentQuestion].correct;
-
-    if (selected === correct) {
+    if (selected === correctIndex) {
         optionButtons[selected].classList.add("correct");
         feedback.textContent = "✅ Resposta correta!";
+        score++;
     } else {
         optionButtons[selected].classList.add("wrong");
-        optionButtons[correct].classList.add("correct");
+        optionButtons[correctIndex].classList.add("correct");
         feedback.textContent = "❌ Resposta errada!";
     }
 
     blockOptions();
-
     autoNextTimeout = setTimeout(nextQuestion, 4000);
 }
 
@@ -92,16 +100,22 @@ function nextQuestion() {
     currentQuestion++;
 
     if (currentQuestion >= questions.length) {
-        questionElement.textContent = "Fim do jogo!";
-        timerElement.textContent = "";
-        feedback.textContent = "";
-        optionButtons.forEach(btn => (btn.style.display = "none"));
-        nextButton.style.display = "none";
-        document.getElementById("clock-emoji").style.display = "none";
+        endGame();
         return;
     }
 
     showQuestion();
+}
+
+function endGame() {
+    questionElement.textContent = "Fim do jogo!";
+    feedback.textContent = `🎉 Você acertou ${score} de ${questions.length} perguntas!`;
+    
+    timerElement.textContent = "";
+    
+    optionButtons.forEach(btn => (btn.style.display = "none"));
+    nextButton.style.display = "none";
+    document.getElementById("clock-emoji").style.display = "none";
 }
 
 nextButton.onclick = nextQuestion;
