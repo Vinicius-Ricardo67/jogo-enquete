@@ -130,6 +130,10 @@
     { "question": "Qual destes números é primo?", 
       "options": ["21", "9", "13", "15"],
       "correct": 2 
+    },
+    { "question": "Qual time é o maior do sul?", 
+      "options": ["Coritiba", "Chapecoense", "Internacional", "Grêmio"],
+      "correct": 2 
     }
   ]
 }
