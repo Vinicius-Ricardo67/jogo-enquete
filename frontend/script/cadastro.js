@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
       alert(`Bem-vindo, ${data.usuario.nome}! Cadastro realizado com sucesso.`);
-      window.location.href = "/frontend/main.html";
+      window.location.href = "main.html";
     } catch (err) {
       console.error("Erro ao cadastrar:", err);
       alert("Erro ao conectar com o servidor. Verifique se o backend está rodando.");
