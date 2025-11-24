@@ -1,115 +1,107 @@
-let shuffled = [...questions].sort(() => Math.random() - 0.5);
-    let current = 0;
-    let score = 0;
-    let timer;
-    let timeLeft = 10;
+const questionElement = document.getElementById("question");
+const optionButtons = document.querySelectorAll(".option");
+const nextButton = document.getElementById("next-btn");
+const feedback = document.getElementById("feedback");
+const timerElement = document.getElementById("timer");
 
-    const questionEl = document.getElementById("question");
-    const optionsEl = document.querySelectorAll(".option");
-    const feedback = document.getElementById("feedback");
-    const nextBtn = document.getElementById("next");
-    const timerEl = document.getElementById("timer");
+let questions = [];
+let currentQuestion = 0;
+let timer;
+let timeLeft = 15;
+let autoNextTimeout;
 
-    function startTimer() {
-        timeLeft = 10;
-        timerEl.textContent = "⏳ " + timeLeft;
+fetch("jogos.json")
+    .then(response => response.json())
+    .then(data => {
 
-        timer = setInterval(() => {
-            timeLeft--;
-            timerEl.textContent = "⏳ " + timeLeft;
+        questions = shuffleArray(data.enquetes).slice(0, 10);
 
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                timeRanOut();
-            }
-        }, 1000);
-    }
+        showQuestion();
+    });
 
-    function loadQuestion() {
-        clearInterval(timer);
-        startTimer();
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
 
-        const q = shuffled[current];
+function startTimer() {
+    timeLeft = 15;
+    timerElement.textContent = `⏰ ${timeLeft}`;
 
-        questionEl.textContent = q.q;
-        feedback.textContent = "";
-        nextBtn.style.display = "none";
+    timer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `⏰ ${timeLeft}`;
 
-        optionsEl.forEach((btn, i) => {
-            btn.textContent = q.options[i];
-            btn.classList.remove("correct", "wrong");
-            btn.disabled = false;
-            btn.onclick = () => selectOption(i);
-        });
-    }
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            blockOptions();
+            feedback.textContent = "⏳ Tempo esgotado!";
 
-    function selectOption(index) {
-        clearInterval(timer);
-
-        const correct = shuffled[current].correct;
-
-        optionsEl.forEach(btn => btn.disabled = true);
-
-        if (index === correct) {
-            score++;
-            optionsEl[index].classList.add("correct");
-            feedback.textContent = "✔ ACERTOU!";
-            feedback.style.color = "#0fc244";
-        } else {
-            optionsEl[index].classList.add("wrong");
-            optionsEl[correct].classList.add("correct");
-            feedback.textContent = "✘ ERROU!";
-            feedback.style.color = "#c22727";
+            autoNextTimeout = setTimeout(nextQuestion, 4000);
         }
+    }, 1000);
+}
 
-        nextBtn.style.display = "block";
-        goToNextWithDelay();
+function blockOptions() {
+    optionButtons.forEach(btn => btn.disabled = true);
+}
+
+function unblockOptions() {
+    optionButtons.forEach(btn => {
+        btn.disabled = false;
+        btn.classList.remove("correct", "wrong");
+    });
+}
+
+function showQuestion() {
+    unblockOptions();
+    feedback.textContent = "";
+    clearInterval(timer);
+    clearTimeout(autoNextTimeout);
+
+    const q = questions[currentQuestion];
+    questionElement.textContent = q.question;
+
+    optionButtons.forEach((btn, index) => {
+        btn.textContent = q.options[index];
+        btn.onclick = () => checkAnswer(index);
+    });
+
+    startTimer();
+}
+
+function checkAnswer(selected) {
+    clearInterval(timer);
+
+    const correct = questions[currentQuestion].correct;
+
+    if (selected === correct) {
+        optionButtons[selected].classList.add("correct");
+        feedback.textContent = "✅ Resposta correta!";
+    } else {
+        optionButtons[selected].classList.add("wrong");
+        optionButtons[correct].classList.add("correct");
+        feedback.textContent = "❌ Resposta errada!";
     }
 
-    function timeRanOut() {
-        const correct = shuffled[current].correct;
+    blockOptions();
 
-        optionsEl.forEach(btn => {
-            btn.disabled = true;
-            btn.classList.remove("correct", "wrong");
-        });
+    autoNextTimeout = setTimeout(nextQuestion, 4000);
+}
 
-        optionsEl[correct].classList.add("correct");
+function nextQuestion() {
+    currentQuestion++;
 
-        feedback.textContent = "⏰ Tempo esgotado!";
-        feedback.style.color = "#ffd000";
-
-        nextBtn.style.display = "block";
-        goToNextWithDelay();
+    if (currentQuestion >= questions.length) {
+        questionElement.textContent = "Fim do jogo!";
+        timerElement.textContent = "";
+        feedback.textContent = "";
+        optionButtons.forEach(btn => (btn.style.display = "none"));
+        nextButton.style.display = "none";
+        document.getElementById("clock-emoji").style.display = "none";
+        return;
     }
 
-    function goToNextWithDelay() {
-        setTimeout(() => {
-            current++;
-            if (current < shuffled.length) {
-                loadQuestion();
-            } else {
-                endGame();
-            }
-        }, 5000);
-    }
+    showQuestion();
+}
 
-    nextBtn.onclick = () => {
-        current++;
-        if (current < shuffled.length) loadQuestion();
-        else endGame();
-    };
-
-    function endGame() {
-        questionEl.textContent = "FIM DE JOGO!";
-        feedback.textContent = `Você acertou ${score} de ${shuffled.length} perguntas!`;
-
-        optionsEl.forEach(btn => {
-            btn.style.display = "none";
-        });
-
-        nextBtn.style.display = "none";
-        timerEl.style.display = "none";
-    }
-
-    loadQuestion();
+nextButton.onclick = nextQuestion;
