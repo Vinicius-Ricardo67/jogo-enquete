@@ -9,6 +9,8 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         return;
     }
 
+    console.log("Enviando login:", { nome, senha });
+
     try {
         const response = await fetch("http://127.0.0.1:8000/login", {
             method: "POST",
