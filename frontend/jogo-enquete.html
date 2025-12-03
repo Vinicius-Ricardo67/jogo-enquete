@@ -9,28 +9,27 @@
 <body>
 
     <div class="container">
+
         <h2 id="question"></h2>
 
-
-<!-- colocar musica quando erra e acerta a questao, colocar musica esquanto esta rolando o jogo -->
-
         <button class="option"></button>
         <button class="option"></button>
-        <button class="option"></button>   
-        <button class="option"></button>  
+        <button class="option"></button>
+        <button class="option"></button>
 
-       <div id="timer">⏰ 15</div>
-       
+        <div id="timer">⏰ 15</div>
+
         <div id="feedback"></div>
 
         <button id="next-btn">Próxima</button>
+
+        <button id="reload" style="display:none;">Jogar Novamente</button>
+
     </div>
 
-    <button id="playBtn">Tocar áudio</button>
-    <audio src="audio/musica.mp4"></audio>
-
-<!-- adicionar um botao de jogar novamente -->
-
+    <audio id="audioAbertura" src="audio/silvio-santos-abertura-show-do-milhao.mp3" loop></audio>
+    <audio id="audioErrou" src="audio/faustao-errou.mp3"></audio>
+    <audio id="audioAcertou" src="audio/acertou-mizeravijk_eifzvEs.mp3"></audio>
 
     <script src="script/enquete.js"></script>
 
