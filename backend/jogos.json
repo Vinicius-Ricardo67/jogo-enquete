@@ -50,90 +50,135 @@
       "options": ["Universal Research Link", "User Request Location", "Uniform Resource Locator", "Upload Remote Link"],
       "correct": 2
     },
-
-    { "question": "Qual é o menor país do mundo?", 
-      "options": ["Mônaco", "Vaticano", "Malta", "San Marino"], 
+    {
+      "question": "Qual é o menor país do mundo?",
+      "options": ["Mônaco", "Vaticano", "Malta", "San Marino"],
       "correct": 1
-     },
-    { "question": "Quem pintou a Mona Lisa?", 
+    },
+    {
+      "question": "Quem pintou a Mona Lisa?",
       "options": ["Van Gogh", "Michelangelo", "Da Vinci", "Picasso"],
-      "correct": 2 
+      "correct": 2
     },
-    { "question":"Qual é o metal mais leve?", 
-      "options": ["Lítio", "Magnésio", "Alumínio", "Titânio"], 
-      "correct": 0 
+    {
+      "question": "Qual é o metal mais leve?",
+      "options": ["Lítio", "Magnésio", "Alumínio", "Titânio"],
+      "correct": 0
     },
-    { "question":"Qual é a capital do Canadá?", 
+    {
+      "question": "Qual é a capital do Canadá?",
       "options": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
       "correct": 2
-     },
-    { "question":"Qual órgão produz a insulina?", 
-      "options": ["Fígado", "Pâncreas", "Baço", "Rim"], 
-      "correct": 1 
     },
-    { "question": "Em que continente fica o Egito?", 
-      "options": ["Ásia", "Europa", "África", "Oceania"], 
-      "correct": 2 
+    {
+      "question": "Qual órgão produz a insulina?",
+      "options": ["Fígado", "Pâncreas", "Baço", "Rim"],
+      "correct": 1
     },
-    { "question": "Quem descobriu o Brasil oficialmente?", 
-      "options": ["Cabral", "Vasco da Gama", "Pedro Álvares", "Cristóvão Colombo"], 
-      "correct": 0 
-    },
-    { "question": "Qual destes é um gás nobre?", 
-      "options": ["Oxigênio", "Neônio", "Hidrogênio", "Carbono"], 
-      "correct": 1 
-    },
-    { "question": "Qual é o maior oceano do mundo?",
-      "options": ["Atlântico", "Índico", "Ártico", "Pacífico"], 
-      "correct": 3 
-    },
-    { "question": "Qual é a montanha mais alta do mundo?", 
-      "options": ["Everest", "K2", "Kangchenjunga", "Makalu"],
-      "correct": 0 
-    },
-    { "question": "O criador da Microsoft foi:",
-      "options": ["Mark Zuckerberg", "Bill Gates", "Steve Jobs", "Larry Page"],
-      "correct": 1 
-    },
-    { "question": "Quantos planetas existem no Sistema Solar?", 
-      "options": ["7", "8", "9", "10"], 
-      "correct": 1 
-    },
-    { "question": "Qual é o idioma mais falado no mundo?",
-      "options": ["Inglês", "Espanhol", "Chinês Mandarim", "Hindi"], 
+    {
+      "question": "Em que continente fica o Egito?",
+      "options": ["Ásia", "Europa", "África", "Oceania"],
       "correct": 2
-     },
-    { "question": "O maior deserto do mundo é:",
-      "options": ["Saara", "Atacama", "Gobi", "Antártida"], 
-      "correct": 3 
     },
-    { "question": "Qual é o maior osso do corpo humano?", 
-      "options": ["Fêmur", "Úmero", "Tíbia", "Vértebra"], 
-      "correct": 0 
+    {
+      "question": "Quem descobriu o Brasil oficialmente?",
+      "options": ["Cabral", "Vasco da Gama", "Pedro Álvares", "Cristóvão Colombo"],
+      "correct": 0
     },
-    { "question": "Quem inventou a lâmpada?", 
+    {
+      "question": "Qual destes é um gás nobre?",
+      "options": ["Oxigênio", "Neônio", "Hidrogênio", "Carbono"],
+      "correct": 1
+    },
+    {
+      "question": "Qual é o maior oceano do mundo?",
+      "options": ["Atlântico", "Índico", "Ártico", "Pacífico"],
+      "correct": 3
+    },
+    {
+      "question": "Qual é a montanha mais alta do mundo?",
+      "options": ["Everest", "K2", "Kangchenjunga", "Makalu"],
+      "correct": 0
+    },
+    {
+      "question": "O criador da Microsoft foi:",
+      "options": ["Mark Zuckerberg", "Bill Gates", "Steve Jobs", "Larry Page"],
+      "correct": 1
+    },
+    {
+      "question": "Quantos planetas existem no Sistema Solar?",
+      "options": ["7", "8", "9", "10"],
+      "correct": 1
+    },
+    {
+      "question": "Qual é o idioma mais falado no mundo?",
+      "options": ["Inglês", "Espanhol", "Mandarim", "Hindi"],
+      "correct": 2
+    },
+    {
+      "question": "O maior deserto do mundo é:",
+      "options": ["Saara", "Atacama", "Gobi", "Antártida"],
+      "correct": 3
+    },
+    {
+      "question": "Qual é o maior osso do corpo humano?",
+      "options": ["Fêmur", "Úmero", "Tíbia", "Vértebra"],
+      "correct": 0
+    },
+    {
+      "question": "Quem inventou a lâmpada?",
       "options": ["Edison", "Tesla", "Graham Bell", "Da Vinci"],
-      "correct": 0 
+      "correct": 0
     },
-    { "question": "Qual é o animal terrestre mais rápido?",
-      "options": ["Tigre", "Guepardo", "Cavalo", "Leopardo"], 
-      "correct": 1 
+    {
+      "question": "Qual é o animal terrestre mais rápido?",
+      "options": ["Tigre", "Guepardo", "Cavalo", "Leopardo"],
+      "correct": 1
     },
-    { "question": "O Sol é:", 
+    {
+      "question": "O Sol é:",
       "options": ["Um planeta", "Uma estrela", "Um cometa", "Um satélite"],
-      "correct": 1 
+      "correct": 1
     },
-    { "question": "Qual país sediou a Copa do Mundo de 2014?",
+    {
+      "question": "Qual país sediou a Copa do Mundo de 2014?",
       "options": ["Brasil", "Rússia", "África do Sul", "Alemanha"],
       "correct": 0
-     },
-    { "question": "Qual destes números é primo?", 
-      "options": ["21", "9", "13", "15"],
-      "correct": 2 
     },
-    { "question": "Qual time é o maior do sul?", 
+    {
+      "question": "Qual destes números é primo?",
+      "options": ["21", "9", "13", "15"],
+      "correct": 2
+    },
+    {
+      "question": "Qual time é o maior do sul?",
       "options": ["Coritiba", "Chapecoense", "Internacional", "Grêmio"],
-      "correct": 2 
+      "correct": 2
+    },
+    {
+      "question": "Qual empresa desenvolveu o sistema operacional Windows?",
+      "options": ["Apple", "IBM", "Microsoft", "Google"],
+      "correct": 2
+    },
+    {
+      "question": "Qual empresa é responsável pela criação do iPhone?",
+      "options": ["Samsung", "Apple", "Google", "LG"],
+      "correct": 1
+    },
+    {
+      "question": "Qual companhia criou o navegador Google Chrome?",
+      "options": ["Mozilla", "Microsoft", "Google", "Opera"],
+      "correct": 2
+    },
+    {
+      "question": "Qual empresa lançou o primeiro computador Macintosh?",
+      "options": ["IBM", "Apple", "Microsoft", "Dell"],
+      "correct": 1
+    },
+    {
+      "question": "Qual fabricante desenvolveu o console PlayStation?",
+      "options": ["Nintendo", "Sony", "Microsoft", "Sega"],
+      "correct": 1
     }
   ]
 }
