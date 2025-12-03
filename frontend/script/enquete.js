@@ -25,7 +25,7 @@ window.onload = () => {
     audioAbertura.play();
 };
 
-fetch("../backend/jogos.json")
+fetch("../backend/enquete.json")
     .then(response => response.json())
     .then(data => {
         questions = shuffleArray(data.enquetes).slice(0, 10);
@@ -123,6 +123,9 @@ function checkAnswer(selected) {
         };
     }
 
+    setTimeout(() => {
+        nextQuestion();
+    }, 3000);
 }
 
 nextButton.onclick = () => {

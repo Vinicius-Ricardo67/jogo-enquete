@@ -86,7 +86,7 @@ function countdown(){
 function checkAnswer(userAnswer){
     if(userAnswer === questions[index].a){
         score++;
-        showMessage("✔ Correto!");
+        showMessage("✅ Correto!");
     } else {
         showMessage("❌ Errado!");
     }
