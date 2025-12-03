@@ -2,21 +2,33 @@ const questionElement = document.getElementById("question");
 const optionButtons = document.querySelectorAll(".option");
 const nextButton = document.getElementById("next-btn");
 const feedback = document.getElementById("feedback");
-const timerElement = document.getElementById("timer"); 
+const timerElement = document.getElementById("timer");
+const reloadButton = document.getElementById("reload");
+
+const audioAbertura = document.getElementById("audioAbertura");
+const audioErrou = document.getElementById("audioErrou");
+const audioAcertou = document.getElementById("audioAcertou");
+
+const VOLUME_NORMAL = 0.35;   
+const VOLUME_BAIXO = 0.10;    
 
 let questions = [];
 let currentQuestion = 0;
 let timer;
 let timeLeft = 15;
-let autoNextTimeout;
 let score = 0;
-let shuffledOptions = []; 
+let shuffledOptions = [];
 let correctIndex = null;
+
+window.onload = () => {
+    audioAbertura.volume = VOLUME_NORMAL;
+    audioAbertura.play();
+};
 
 fetch("../backend/jogos.json")
     .then(response => response.json())
     .then(data => {
-        questions = shuffleArray(data.enquetes).slice(0, 10); 
+        questions = shuffleArray(data.enquetes).slice(0, 10);
         showQuestion();
     });
 
@@ -35,8 +47,11 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timer);
             blockOptions();
+
+            optionButtons[correctIndex].classList.add("correct");
             feedback.textContent = "⏳ Tempo esgotado!";
-            autoNextTimeout = setTimeout(nextQuestion, 4000);
+
+            setTimeout(nextQuestion, 3000);
         }
     }, 1000);
 }
@@ -56,10 +71,8 @@ function showQuestion() {
     unblockOptions();
     feedback.textContent = "";
     clearInterval(timer);
-    clearTimeout(autoNextTimeout);
 
     const q = questions[currentQuestion];
-
     questionElement.textContent = q.question;
 
     shuffledOptions = q.options.map((opt, index) => ({
@@ -68,7 +81,6 @@ function showQuestion() {
     }));
 
     shuffledOptions = shuffleArray(shuffledOptions);
-
     correctIndex = shuffledOptions.findIndex(opt => opt.isCorrect);
 
     optionButtons.forEach((btn, index) => {
@@ -81,20 +93,41 @@ function showQuestion() {
 
 function checkAnswer(selected) {
     clearInterval(timer);
+    blockOptions();
+
+    audioAbertura.volume = VOLUME_BAIXO;
 
     if (selected === correctIndex) {
         optionButtons[selected].classList.add("correct");
         feedback.textContent = "✅ Resposta correta!";
+
+        audioAcertou.currentTime = 0;
+        audioAcertou.play();
+
+        audioAcertou.onended = () => {
+            audioAbertura.volume = VOLUME_NORMAL;
+        };
+
         score++;
+
     } else {
         optionButtons[selected].classList.add("wrong");
         optionButtons[correctIndex].classList.add("correct");
         feedback.textContent = "❌ Resposta errada!";
+
+        audioErrou.currentTime = 0;
+        audioErrou.play();
+
+        audioErrou.onended = () => {
+            audioAbertura.volume = VOLUME_NORMAL;
+        };
     }
 
-    blockOptions();
-    autoNextTimeout = setTimeout(nextQuestion, 4000);
 }
+
+nextButton.onclick = () => {
+    nextQuestion();
+};
 
 function nextQuestion() {
     currentQuestion++;
@@ -110,19 +143,13 @@ function nextQuestion() {
 function endGame() {
     questionElement.textContent = "Fim do jogo!";
     feedback.textContent = `🎉 Você acertou ${score} de ${questions.length} perguntas!`;
-    
+
     timerElement.textContent = "";
-    
-    optionButtons.forEach(btn => (btn.style.display = "none"));
+
+    optionButtons.forEach(btn => btn.style.display = "none");
     nextButton.style.display = "none";
-    document.getElementById("clock-emoji").style.display = "none";
+
+    reloadButton.style.display = "inline-block";
 }
 
-const audio = new Audio("audio/musica.mp4");
-
-document.getElementById("playBtn").addEventListener("click", () => {
-    audio.play();
-});
-
-
-nextButton.onclick = nextQuestion;
+reloadButton.onclick = () => location.reload();
