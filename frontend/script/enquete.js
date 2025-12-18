@@ -9,8 +9,8 @@ const audioAbertura = document.getElementById("audioAbertura");
 const audioErrou = document.getElementById("audioErrou");
 const audioAcertou = document.getElementById("audioAcertou");
 
-const VOLUME_NORMAL = 0.35;   
-const VOLUME_BAIXO = 0.10;    
+const VOLUME_NORMAL = 0.35;
+const VOLUME_BAIXO = 0.10;
 
 let questions = [];
 let currentQuestion = 0;
@@ -19,6 +19,7 @@ let timeLeft = 15;
 let score = 0;
 let shuffledOptions = [];
 let correctIndex = null;
+let nextTimeout = null; 
 
 window.onload = () => {
     audioAbertura.volume = VOLUME_NORMAL;
@@ -51,7 +52,7 @@ function startTimer() {
             optionButtons[correctIndex].classList.add("correct");
             feedback.textContent = "⏳ Tempo esgotado!";
 
-            setTimeout(nextQuestion, 3000);
+            nextTimeout = setTimeout(nextQuestion, 3000);
         }
     }, 1000);
 }
@@ -68,6 +69,12 @@ function unblockOptions() {
 }
 
 function showQuestion() {
+    
+    if (nextTimeout) {
+        clearTimeout(nextTimeout);
+        nextTimeout = null;
+    }
+
     unblockOptions();
     feedback.textContent = "";
     clearInterval(timer);
@@ -109,7 +116,6 @@ function checkAnswer(selected) {
         };
 
         score++;
-
     } else {
         optionButtons[selected].classList.add("wrong");
         optionButtons[correctIndex].classList.add("correct");
@@ -123,12 +129,16 @@ function checkAnswer(selected) {
         };
     }
 
-    setTimeout(() => {
-        nextQuestion();
-    }, 3000);
+    
+    nextTimeout = setTimeout(nextQuestion, 3000);
 }
 
 nextButton.onclick = () => {
+ 
+    if (nextTimeout) {
+        clearTimeout(nextTimeout);
+        nextTimeout = null;
+    }
     nextQuestion();
 };
 
