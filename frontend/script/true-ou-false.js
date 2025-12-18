@@ -22,12 +22,12 @@ function shuffle(arr){
     return arr.sort(() => Math.random() - 0.5);
 }
 
-let questions = shuffle([...QUESTIONS]);
+let questions = shuffle("../backend/true-ou-false.json");
 
 function startGame(){
     index = 0;
     score = 0;
-    questions = shuffle([...QUESTIONS]);
+    questions = shuffle("../backend/true-ou-false.json");
     resultEl.style.display = "none";
     loadQuestion();
 }
@@ -56,7 +56,7 @@ function countdown(){
 function checkAnswer(userAnswer){
     if(userAnswer === questions[index].a){
         score++;
-        showMessage(" Sua resposta está Correta! ✅");
+        showMessage("Sua resposta está Correta! ✅");
     } else {
         showMessage("Sua resposta está Errada! ❌");
     }
