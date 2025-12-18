@@ -19,7 +19,7 @@ let timeLeft = 15;
 let score = 0;
 let shuffledOptions = [];
 let correctIndex = null;
-let nextTimeout = null; // ⬅️ CONTROLA O TEMPO AUTOMÁTICO
+let nextTimeout = null; 
 
 window.onload = () => {
     audioAbertura.volume = VOLUME_NORMAL;
@@ -69,7 +69,7 @@ function unblockOptions() {
 }
 
 function showQuestion() {
-    // ⛔ Cancela qualquer avanço automático antigo
+    
     if (nextTimeout) {
         clearTimeout(nextTimeout);
         nextTimeout = null;
@@ -129,12 +129,12 @@ function checkAnswer(selected) {
         };
     }
 
-    // ⏱️ Só conta os 3s se NÃO clicar no botão "Próximo"
+    
     nextTimeout = setTimeout(nextQuestion, 3000);
 }
 
 nextButton.onclick = () => {
-    // ❌ Cancela o tempo automático
+ 
     if (nextTimeout) {
         clearTimeout(nextTimeout);
         nextTimeout = null;
