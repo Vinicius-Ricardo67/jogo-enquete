@@ -1,0 +1,6 @@
+{
+    "pergunta": "qual poder você prefere",
+    "opcao1": {"texto": "fogo", "image": null, "cor": "#FF2D2D"},
+    "opcao2": {"texto": "gelo", "image": null, "cor": "#0094FF"},
+    "tempo": 10
+}
