@@ -7,5 +7,5 @@ document.getElementById("game2").addEventListener("click", function () {
 });
 
 document.getElementById("game3").addEventListener("click", function () {
-    window.open("qual-vc-prefere.html", "_blank");
+    window.open("isso_ou_aquilo.html", "_blank");
 });
