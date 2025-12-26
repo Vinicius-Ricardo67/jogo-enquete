@@ -3,12 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo-Enquete</title>
+    <link rel="stylesheet" href="style/enquete.css">
+    <title>Jogo Enquete</title>
 </head>
 <body>
-    
-<button>teste</button>
 
+        <div class="container">
+
+        <h2 id="question"></h2>            
+
+        <button class="option"></button>
+        <button class="option"></button>
+        <button class="option"></button>
+        <button class="option"></button>
+
+        <div id="timer">⏰ 15</div>
+
+        <div id="feedback"></div>
+
+        <button id="next-btn">Próxima</button>
+
+        <button id="reload" style="display:none;">Jogar Novamente</button>
+
+    </div>
+
+    <audio id="audioAbertura" src="audio/silvio-santos-abertura-show-do-milhao.mp3" loop></audio>
+    <audio id="audioErrou" src="audio/faustao-errou.mp3"></audio>
+    <audio id="audioAcertou" src="audio/acertou-mizeravi.mp3"></audio>
+
+    <script src="script/enquete.js"></script>
 
 </body>
 </html>

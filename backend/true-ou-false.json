@@ -1,0 +1,179 @@
+{ 
+  "enquetes": [
+    {
+      "question": "O Sol é uma estrela.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A água ferve a 50°C.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O Brasil já ganhou Copa do Mundo.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A lua é maior que a Terra.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "Diamantes são feitos de carbono.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A gravidade na Lua é menor do que na Terra.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O Oceano Atlântico é o maior oceano do mundo.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O ser humano possui 206 ossos na fase adulta.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A capital do Canadá é Toronto.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O primeiro computador eletrônico foi criado nos anos 40.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A água cobre mais de 70% da superfície da Terra.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A Antártida é o continente mais quente do planeta.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O Monte Everest é a montanha mais alta do mundo.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O diamante é o material mais duro encontrado na natureza.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "Os morcegos são cegos.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "A luz do Sol leva cerca de 8 minutos para chegar à Terra.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "Um polvo possui três corações.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A Grande Muralha da China é visível do espaço a olho nu.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "A Terra gira ao redor do Sol.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "Os cães conseguem identificar cores exatamente como os humanos.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O sangue dentro das veias é azul.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O planeta mais próximo do Sol é Mercúrio.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O ser humano pode viver sem o fígado.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "A língua é o músculo mais forte do corpo humano.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O oxigênio é o gás mais abundante na atmosfera da Terra.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "Baratas conseguem sobreviver por semanas sem cabeça.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O coração humano possui quatro câmaras.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A eletricidade sempre flui do polo negativo para o positivo.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O Oceano Pacífico é maior que todos os continentes juntos.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A internet foi criada antes do Wi-Fi.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O chocolate é tóxico para cães.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "A Apple foi fundada depois da Microsoft.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O ser humano já pisou em Marte.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    },
+    {
+      "question": "O golfinho é um mamífero.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 0
+    },
+    {
+      "question": "O pinguim consegue voar.",
+      "options": ["Verdadeiro", "Falso"],
+      "correct": 1
+    }
+  ]
+}
