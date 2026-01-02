@@ -2,6 +2,8 @@
   --fundo-dark: url(../assets/fundogame.png);
   --verde: #00490c;
   --hover: #003609;
+  --degrade: linear-gradient(90deg, #006611, #159c4d, #8f8f8f);
+  --shadow: rgba(0, 124, 21, 0.7);
 }
 
 * {
@@ -39,6 +41,19 @@ body {
   position: relative;
   z-index: 20;
 }
+
+.opcao-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.opcao-box:hover {
+  transform: scale(1.05);
+}
+
 
 #perguntas {
   font-size: 1.4rem;
@@ -92,7 +107,7 @@ body {
 .opcao2:hover {
   background: var(--verde);
   color: #fff;
-  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--shadow);
 }
 
 .card-label {
@@ -104,35 +119,108 @@ body {
   transition: 0.3s;
   margin-top: -20px;
   padding: 10px;
-  width: 94.5%;
+  width: 94.6%;
 }
 
 #opcao1 + .card-label {
   margin-left: 20px;
 }
 
+#opcao2 + .card-label {
+  margin-left: -20px;
+  width: 94.5%;
+}
+
 .opcao1:hover + .card-label,
 .opcao2:hover + .card-label {
   background: var(--hover);
   color: #fff;
-  transform: scale(1.05);
 }
 
 .timer {
   position: absolute;
-  top: 22%;
+  top: 29%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
-  color: var(--verde);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 90px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 0 0 90px 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  z-index: 10;
-  padding: 45px;
+  color: var(--verde);
 }
+
+.fim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.fim-box {
+  background: #1e1e1e;
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.fim-box button {
+  margin-top: 20px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--verde);
+  transition: 0.3s ease;
+}
+
+.fim-box button:hover {
+  background: var(--verde);
+  color: #fff;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  background: var(--degrade);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.categorias {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.categorias button {
+  padding: 20px 40px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: var(--verde);
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.categorias button:hover {
+  background: var(--verde);
+  color: #fff;
+  box-shadow: 0 0 15px var(--shadow);
+}
+
