@@ -1,6 +1,18 @@
 {
-    "pergunta": "qual poder você prefere",
-    "opcao1": {"texto": "fogo", "image": null, "cor": "#FF2D2D"},
-    "opcao2": {"texto": "gelo", "image": null, "cor": "#0094FF"},
-    "tempo": 10
+  "categorias": {
+    "comidas": [
+      {
+        "pergunta": "Café ou Chá?",
+        "opcao1": { "texto": "Café", "imagem": "" },
+        "opcao2": { "texto": "Chá", "imagem": "" }
+      }
+    ],
+    "jogos": [
+      {
+        "pergunta": "Minecraft ou Fortnite?",
+        "opcao1": { "texto": "Minecraft", "imagem": "" },
+        "opcao2": { "texto": "Fortnite", "imagem": "" }
+      }
+    ]
+  }
 }

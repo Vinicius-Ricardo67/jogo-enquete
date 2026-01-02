@@ -7,37 +7,51 @@
   <title>Isso ou Aquilo</title>
 </head>
 <body>
-<div class="container">
+  <div class="container" id="tela-categorias">
+    <h1 class="titulo">Escolha uma categoria</h1>
 
-  <div class="box-perguntas">
-    <h2 id="perguntas">Pergunta</h2>
+    <div class="categorias">
+      <button onclick="escolherCategoria('comidas')">🍔 Comidas</button>
+      <button onclick="escolherCategoria('jogos')">🎮 jogos</button>
+    </div>
   </div>
 
-  <div class="jogo">
+  <div class="container hidden" id="tela-jogo">
+    <div class="box-perguntas">
+      <h2 id="perguntas">Pergunta</h2>
+    </div>
 
-    <div class="opcao-box">
+    <div class="jogo">
+      <div class="opcao-box">
         <div class="opcao1" id="opcao1">
-            <div class="card1">
-                <img id="img1">
-            </div>
+          <div class="card1">
+            <img id="img1">
+          </div>
         </div>
         <div class="card-label" id="label1">Opção 1</div>
-    </div>
-
-    <div class="timer" id="timer">10</div>
-
-    <div class="opcao-box">
-      <div class="opcao2" id="opcao2">
-        <div class="card2">
-          <img id="img2">
-        </div>
       </div>
-      <div class="card-label">Opção 2</div>
-    </div>
 
+      <div class="timer" id="timer">10</div>
+
+      <div class="opcao-box">
+        <div class="opcao2" id="opcao2">
+          <div class="card2">
+            <img id="img2">
+          </div>
+        </div>
+        <div class="card-label" id="label2">Opção 2</div>
+      </div>
+
+    </div>
   </div>
 
-</div>
+  <div class="fim" id="fim">
+    <div class="fim-box">
+      <h2>Fim de jogo</h2>
+      <button onclick="reiniciarJogo()">Jogar novamente</button>
+    </div>
+  </div>
 
+  <script src="/frontend/script/isso_ou_aquilo.js"></script>
 </body>
 </html>
