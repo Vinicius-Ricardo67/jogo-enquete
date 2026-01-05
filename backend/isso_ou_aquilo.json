@@ -1,18 +1,59 @@
 {
   "categorias": {
-    "comidas": [
-      {
-        "pergunta": "Café ou Chá?",
-        "opcao1": { "texto": "Café", "imagem": "" },
-        "opcao2": { "texto": "Chá", "imagem": "" }
-      }
-    ],
-    "jogos": [
-      {
-        "pergunta": "Minecraft ou Fortnite?",
-        "opcao1": { "texto": "Minecraft", "imagem": "" },
-        "opcao2": { "texto": "Fortnite", "imagem": "" }
-      }
-    ]
+    "jogos": {
+      "estilos": [
+        { "texto": "RPG", "imagem": "" },
+        { "texto": "JRPG", "imagem": "" },
+        { "texto": "Ação", "imagem": "" },
+        { "texto": "FPS", "imagem": "" },
+        { "texto": "TPS", "imagem": "" },
+        { "texto": "Soulslike", "imagem": "" },
+        { "texto": "Stealth", "imagem": "" },
+        { "texto": "Aventura", "imagem": "" },
+        { "texto": "Sandbox", "imagem": "" },
+        { "texto": "Roguelike", "imagem": "" },
+        { "texto": "Hack and Slash", "imagem": "" },
+        { "texto": "Estratégia", "imagem": "" },
+        { "texto": "Simulação", "imagem": "" },
+        { "texto": "Survival", "imagem": "" },
+        { "texto": "Puzzle", "imagem": "" }
+      ],
+
+      "fps": [
+        { "texto": "Call of Duty", "imagem": "" },
+        { "texto": "Battlefield", "imagem": "" },
+        { "texto": "CS:GO", "imagem": "" },
+        { "texto": "Valorant", "imagem": "" },
+        { "texto": "Overwatch", "imagem": "" },
+        { "texto": "Apex Legends", "imagem": "" },
+        { "texto": "Rainbow Six Siege", "imagem": "" },
+        { "texto": "DOOM", "imagem": "" },
+        { "texto": "Halo", "imagem": "" },
+        { "texto": "Titanfall", "imagem": "" },
+        { "texto": "PUBG", "imagem": "" },
+        { "texto": "Escape from Tarkov", "imagem": "" },
+        { "texto": "Far Cry", "imagem": "" },
+        { "texto": "Wolfenstein", "imagem": "" },
+        { "texto": "Borderlands", "imagem": "" }
+      ],
+
+      "consoles": [
+        { "texto": "PlayStation", "imagem": "" },
+        { "texto": "Xbox", "imagem": "" },
+        { "texto": "PC", "imagem": "" },
+        { "texto": "Nintendo Switch", "imagem": "" },
+        { "texto": "Steam Deck", "imagem": "" },
+        { "texto": "PlayStation 5", "imagem": "" },
+        { "texto": "Xbox Series X", "imagem": "" },
+        { "texto": "PlayStation 4", "imagem": "" },
+        { "texto": "Xbox One", "imagem": "" },
+        { "texto": "Nintendo 3DS", "imagem": "" },
+        { "texto": "PS Vita", "imagem": "" },
+        { "texto": "Wii", "imagem": "" },
+        { "texto": "GameCube", "imagem": "" },
+        { "texto": "PlayStation 2", "imagem": "" },
+        { "texto": "Super Nintendo", "imagem": "" }
+      ]
+    }
   }
 }
