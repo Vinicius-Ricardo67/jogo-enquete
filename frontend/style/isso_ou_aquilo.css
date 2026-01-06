@@ -2,8 +2,9 @@
   --fundo-dark: url(../assets/fundogame.png);
   --verde: #00490c;
   --hover: #003609;
-  --degrade: linear-gradient(90deg, #006611, #159c4d, #8f8f8f);
+  --degrade: linear-gradient(90deg, #003f0a, #84ff98, #003f0a);
   --shadow: rgba(0, 124, 21, 0.7);
+  --degrade-barra: linear-gradient(90deg, #00490c, #03a71f, #06e22b);
 }
 
 * {
@@ -98,8 +99,8 @@ body {
 
 .card1 img,
 .card2 img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 78%;
+  max-height: 78%;
   object-fit: contain;
 }
 
@@ -225,3 +226,34 @@ body {
   box-shadow: 0 0 15px var(--shadow);
 }
 
+.vitoria {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 255, 100, 0.8);
+  transition: 0.4 ease;
+}
+
+.derrota {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.4s ease;
+}
+
+.progresso {
+  position: absolute;
+  top: 20.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 12px;
+  background: #ffffff20;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.progresso-barra {
+  height: 100%;
+  background: var(--degrade-barra);
+  transition: width 0.4s ease;
+  border-radius: 12px;
+}
